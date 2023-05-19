@@ -18,26 +18,27 @@ int main(int argc, char **argv)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	while ((line = lines_reader(argv[1], line_number)) != NULL){
+	while ((line = lines_reader(argv[1], line_number)) != NULL)
+	{
 		command = strtok(line, " \r\t\n");
 		if (command == NULL)
 		{
 			line_number++;
 			free(line);
 			continue;
-		}	
-		if (strcmp(command, "push") == 0) 
+		}
+		if (strcmp(command, "push") == 0)
 			var = 1;
-		else if (strcmp(command, "pall") == 0) 
+		else if (strcmp(command, "pall") == 0)
 			var = 2;
-		else 
+		else
 			var = 0;
 		switch (var)
 		{
 			case 1:
 				push(&stack, line_number);
 				break;
-			case 2: 
+			case 2:
 				pall(&stack, line_number);
 				break;
 			default:
