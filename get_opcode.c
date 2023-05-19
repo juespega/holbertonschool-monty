@@ -5,9 +5,9 @@
  * @stack: Double pointer to the first node of the list.
  * @line_number: Data value for the new node.
  *
- * Return: NULL on failure or address of the new element on success.
+ * Return: NULL on failure or address of the new element on success
  */
-void (*get_opcode(char *instruction))(stack_t **stack, unsigned int line_number)
+void(*get_opcode(char *instruction))(stack_t **stack, unsigned int line_number)
 {
 unsigned int i;
 instruction_t instructions[] = {
