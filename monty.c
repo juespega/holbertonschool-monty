@@ -26,19 +26,13 @@ if (command == NULL)
 line_number++;
 free(line);
 continue;
-}	
+}
 if (strcmp(command, "push") == 0)
-{
 var = 1;
-}
 else if (strcmp(command, "pall") == 0)
-{
 var = 2;
-}
 else
-{
 var = 0;
-}
 switch (var)
 {
 case 1:
