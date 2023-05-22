@@ -33,7 +33,7 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 	}
 	stack_t *new_node = NULL;
-	
+
 	if (stack == NULL)
 		return;
 	new_node = (stack_t *)malloc(sizeof(stack_t));
@@ -49,7 +49,6 @@ void push(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 	}
 	*stack = new_node;
-	return;
 }
 /**
  * pall - Adds a new node at the beginning of a stack_t list.
