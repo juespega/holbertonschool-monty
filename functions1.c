@@ -8,6 +8,7 @@
 int an_alpha(const char *str)
 {
 	size_t i;
+
 	if (*str == '-')
 		str++;
 	for (i = 0; str[i] != '\0'; i++)
