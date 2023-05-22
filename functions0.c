@@ -33,6 +33,7 @@ void push(stack_t **stack, unsigned int line_number)
 		}
 	}
 	stack_t *new_node = NULL;
+	
 	if (stack == NULL)
 		return;
 	new_node = (stack_t *)malloc(sizeof(stack_t));
