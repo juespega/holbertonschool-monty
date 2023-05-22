@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * void - Adds a new node at the beginning of a stack_t list.
+ * get_code - Adds a new node at the beginning of a stack_t list.
  * @instruction: Data value for the new node.
  * @stack: Double pointer to the first node of the list.
  * @line_number: Data value for the new node.
