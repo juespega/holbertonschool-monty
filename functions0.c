@@ -97,7 +97,7 @@ void pint(stack_t **stack, unsigned int line_number)
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp_node = NULL;
-	
+
 	if (stack == NULL || *stack == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", line_number);
@@ -122,15 +122,15 @@ void pop(stack_t **stack, unsigned int line_number)
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp_node = NULL;
-	
+
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-	    	dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
-		free(line);
-		stack_freer(*stack);
-		exit(EXIT_FAILURE);	
+	dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
+	free(line);
+	stack_freer(*stack);
+	exit(EXIT_FAILURE);
 	}
-	temp_node = (*stack) ->next;
+	temp_node = (*stack)->next;
 	(*stack)->next = temp_node->next;
 	(*stack)->prev = temp_node;
 	temp_node->next = (*stack);
@@ -147,16 +147,16 @@ void swap(stack_t **stack, unsigned int line_number)
 void add(stack_t **stack, unsigned int line_number)
 {
 	int ans;
-    if(stack == NULL || *stack == NULL || (*stack)->next == NULL)
-    {
-	    dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", line_number);
-		free(line);
-		stack_freer(*stack);
-		exit(EXIT_FAILURE);	
+	if(stack == NULL || *stack == NULL || (*stack)->next == NULL)
+    	{
+	dprintf(STDERR_FILENO, "L%u: can't add, stack too short\n", line_number);
+	free(line);
+	stack_freer(*stack);
+	exit(EXIT_FAILURE);	
 	}
-	ans = (*stack) ->next->n + (*stack) ->n;
-	(*stack) ->next->n = ans;
-	pop (stack, line_number);
+	ans = (*stack)->next->n + (*stack)->n;
+	(*stack)->next->n = ans;
+	pop(stack, line_number);
 }
 /**
  * nop - Adds a new node at the beginning of a stack_t list.
@@ -167,5 +167,5 @@ void add(stack_t **stack, unsigned int line_number)
  */
 void nop(stack_t **stack, unsigned int line_number)
 {
-    (void)stack, (void)line_number;
+	(void)stack, (void)line_number;
 }
