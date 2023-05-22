@@ -29,11 +29,11 @@ char *lines_reader(char *file, unsigned int line_number)
 		}
 		if (i == line_number - 1)
 		{
-			fclose (file_monty);
+			fclose(file_monty);
 			return (line);
 		}
 	}
-	fclose (file_monty);
-	free (line);
+	fclose(file_monty);
+	free(line);
 	return (NULL);
 }
