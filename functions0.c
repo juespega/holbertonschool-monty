@@ -61,6 +61,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 	stack_t *i = NULL;
+
 	if (stack == NULL)
 		return;
 	if (*stack == NULL)
@@ -77,7 +78,7 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void pint(stack_t **stack, unsigned int line_number)
 {
-	if(stack == NULL || *stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pint, stack empty\n", line_number);
 		free(line);
@@ -96,7 +97,8 @@ void pint(stack_t **stack, unsigned int line_number)
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp_node = NULL;
-	if(stack == NULL || *stack == NULL)
+	
+	if (stack == NULL || *stack == NULL)
 	{
 		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", line_number);
 		free(line);
@@ -105,7 +107,7 @@ void pop(stack_t **stack, unsigned int line_number)
 	}
 	temp_node = *stack;
 	*stack = (*stack)->next;
-	if(*stack != NULL)
+	if (*stack != NULL)
 	(*stack)->prev = NULL;
 
 	free(temp_node);
@@ -120,9 +122,10 @@ void pop(stack_t **stack, unsigned int line_number)
 void swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp_node = NULL;
-	if(stack == NULL || *stack == NULL || (*stack)->next == NULL)
+	
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 	{
-	    dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
+	    	dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line_number);
 		free(line);
 		stack_freer(*stack);
 		exit(EXIT_FAILURE);	
