@@ -1,9 +1,8 @@
 #include "monty.h"
 /**
  * get_opcode - Adds a new node at the beginning of a stack_t list.
- * @instruction: Data value for the new node.
- * @stack: Double pointer to the first node.
- * @line_number: Data value.
+ * @stack: Double pointer to the first node of the list.
+ * @line_number: Data value for the new node.
  *
  * Return: NULL on failure or address of the new element on success.
  */
